@@ -1,0 +1,14 @@
+* {
+    .link {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+// The * is a wildcard selector that targets all elements.
+// The .link selector is nested within the * selector. 
+// This means that the styles specified inside .link will apply to any element with the class "link" that is a 
+// descendant of any other element on the page.
+
+// When you import a SCSS file in a React component (e.g., app.jsx), and that component is rendered at the top level of your application, 
+// the styles defined in the SCSS file will be applied to all child components as well.

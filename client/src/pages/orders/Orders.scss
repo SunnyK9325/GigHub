@@ -1,0 +1,69 @@
+.orders {
+    display: flex;
+    justify-content: center;
+    color: #555;
+    padding: 0px 85px;
+
+    .container {
+        width: 1400px;
+        padding: 50px 0;
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+
+
+            button {
+                background-color: #1dbf73;
+                font-size: 14px;
+                color: white;
+                font-weight: 500;
+                border: none;
+                padding: 8px;
+                cursor: pointer;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: #158e5e;
+                }
+            }
+        }
+
+        table {
+            width: 100%;
+
+            tr {
+                height: 50px;
+
+                th {
+                    text-align: left;
+                }
+
+                td {
+                    text-align: left;
+
+                    sup {
+                        font-size: 12px;
+                    }
+
+                    .image {
+                        width: 50px;
+                        height: 25px;
+                        object-fit: cover;
+                    }
+
+                    .message {
+                        width: 20px;
+                        cursor: pointer;
+                    }
+                }
+
+                &:nth-child(even) {
+                    background-color: #1dbf730f;
+                }
+            }
+        }
+    }
+}

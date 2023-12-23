@@ -1,0 +1,103 @@
+.featured {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    background-color: #073F24;
+    color: white;
+
+    .container {
+        width: 1400px;
+        display: flex;
+        align-items: center;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            h1 {
+                font-size: 50px;
+
+                i {
+                    font-weight: 300;
+
+                    span {
+                        font-family: DomaineDisplay, Helvetica Neue, Helvetica, Arial, sans-serif;
+                    }
+                }
+
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: white;
+                border-radius: 5px;
+                height: 48px;
+                width: 650px;
+
+                .searchInput {
+                    padding: 10px 2px 10px 16px;
+                    width: 95%;
+
+                    input {
+                        border: none;
+                        outline: none;
+                        font-size: 16px;
+                        width: 100%;
+
+                        ::placeholder {
+                            color: #A7A9AE;
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+                button {
+                    height: 48px;
+                    border: none;
+                    width: 65px;
+                    background-color: #1dbf73;
+                    border-radius: 0 4px 4px 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #158e5e;
+                    }
+                }
+            }
+
+            .popular {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                span {
+                    font-weight: 500;
+                }
+
+                button {
+                    color: white;
+                    border: 1px solid white;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    background-color: transparent;
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .right {
+            height: 100%;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+                margin-left: 185px;
+            }
+        }
+    }
+}

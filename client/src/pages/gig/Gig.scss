@@ -9,25 +9,25 @@
         display: flex;
         gap: 50px;
 
+        .path {
+            display: flex;
+            // align-items: center;
+            gap: 8px;
+            margin: 10px 0 0 0;
+
+            .breadcrumbs {
+                font-size: 14px;
+                color: #404145;
+                font-weight: 500;
+            }
+        }
+
         .left {
             flex: 2;
             display: flex;
             flex-direction: column;
             gap: 20px;
             max-width: 900px;
-
-            .breadCrumbs {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin: 20px 0;
-
-                .path {
-                    font-size: 14px;
-                    color: #222325;
-                    font-weight: 500;
-                }
-            }
 
             .user {
                 display: flex;
@@ -79,7 +79,8 @@
 
             .slider {
                 background-color: #f5f5f5;
-                padding: 0px 150px;
+                padding: 0px 300px;
+                
 
                 img {
                     max-height: 400px;

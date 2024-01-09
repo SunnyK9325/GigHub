@@ -105,7 +105,7 @@ const Navbar = () => {
 
                     {!currentUser && <Link to="/login" className='link'><span>Sign in</span></Link>}
                     {!currentUser?.isSeller && <span>Become a seller</span>}
-                    {!currentUser && <button>Join</button>}
+                    {/* {!currentUser && <span>Join</span>} */}
                     {currentUser && (
                         <div ref={dropdownRef} className='user' onClick={() => setOpen(!open)}>
                             <img src={currentUser.img || "/img/noavatar.png"}

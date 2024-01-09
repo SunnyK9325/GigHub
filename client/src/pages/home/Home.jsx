@@ -118,7 +118,7 @@ const Home = () => {
             </div>
 
             <div className='projects'>
-                <Slide flag={2} slidesToShow = {3} slidesToSlide={1}>
+                <Slide flag={2} slidesToShow = {4} slidesToSlide={1}>
                     {projects.map((card) => (
                         <ProjectCard key={card.id} card={card} />
                     ))}

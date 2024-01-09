@@ -6,6 +6,8 @@ import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { HiOutlineHome } from "react-icons/hi2";
+import img from "/img/noavatar.png";
 
 function Gig() {
     const { id } = useParams();
@@ -62,9 +64,11 @@ function Gig() {
             ) : (
                 <div className="container">
                     <div className="left">
-                        <span className="breadcrumbs">
-                            Fiverr {">"} Graphics & Design {">"}
-                        </span>
+                        <div className='path'>
+                            <Link to='/' className='link'><HiOutlineHome style={{ marginRight: '5px', width: '14px' }} /></Link>
+                            <span style={{ color: '#c5c6c9' }}>/</span>
+                            <span className='breadcrumbs'> Graphics & Design </span>
+                        </div>
                         <h1>{data.title}</h1>
                         {isLoadingUser ? (
                             "loading"
@@ -74,7 +78,7 @@ function Gig() {
                             <div className="user">
                                 <img
                                     className="pp"
-                                    src={dataUser.img || "/img/noavatar.jpg"}
+                                    src={dataUser.img || img}
                                     alt=""
                                 />
                                 <span>{dataUser.username}</span>
@@ -91,16 +95,16 @@ function Gig() {
                             </div>
                         )}
                         <Carousel
-                            swipeable={true} 
-                            draggable={true} 
+                            swipeable={true}
+                            draggable={true}
                             showDots={false}
                             responsive={responsive}
                             ssr={true}
                             infinite={true}
-                            autoPlay={false} 
+                            autoPlay={false}
                             keyBoardControl={true}
-                            customTransition="transform 1000ms ease-in-out" 
-                            transitionDuration={1000} 
+                            customTransition="transform 1000ms ease-in-out"
+                            transitionDuration={1000}
                             className="slider">
 
                             {data.images.map((item, index) => (
@@ -118,7 +122,7 @@ function Gig() {
                             <div className="seller">
                                 <h2>About The Seller</h2>
                                 <div className="user">
-                                    <img src={dataUser.img || "/img/noavatar.jpg"} alt="" />
+                                    <img src={dataUser.img || img} alt="" />
                                     <div className="info">
                                         <span>{dataUser.username}</span>
                                         {!isNaN(data.totalStars / data.starNumber) && (

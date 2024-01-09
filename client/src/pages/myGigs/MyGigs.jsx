@@ -8,12 +8,14 @@ import newRequest from "../../utils/newRequest";
 function MyGigs() {
     const currentUser = getCurrentUser();
 
+    // console.log(currentUser);
+
     const queryClient = useQueryClient();
 
     const { isLoading, error, data } = useQuery({
         queryKey: ["myGigs"],
         queryFn: () =>
-            newRequest.get(`/gigs?userId=${currentUser.id}`).then((res) => {
+            newRequest.get(`/gigs?userId=${currentUser._id}`).then((res) => {
                 return res.data;
             }),
     });

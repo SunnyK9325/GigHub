@@ -72,7 +72,7 @@ const Home = () => {
                 <div className='container'>
                     <div className='item'>
                         <div className='heading'>
-                            <span className='text'>fiverr</span>
+                            <span className='text'>GigHub</span>
                             <FiberManualRecordIcon style={{ color: '#1dbf73', width: '12px', marginBottom: '-8px' }} />
                             <span className='text2'> Business Solutions</span>
                         </div>
@@ -82,7 +82,7 @@ const Home = () => {
                         <div className='title'>
                             <VerifiedIcon className='icon' style={{ fill: '#B1ABFF', fontSize: '28px' }} />
                             <div className='listItem'>
-                                <span>Fiverr Pro</span>
+                                <span>GigHub Pro</span>
                                 <p>Access top freelancers and professional business tools for any project</p>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ const Home = () => {
                         <div className='title'>
                             <VerifiedIcon className='icon' style={{ fill: '#B1ABFF', fontSize: '28px' }} />
                             <div className='listItem'>
-                                <span>Fiverr Certified</span>
+                                <span>GigHub Certified</span>
                                 <p>Build your own branded marketplace of certified experts</p>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ const Home = () => {
                         <div className='title'>
                             <VerifiedIcon className='icon' style={{ fill: '#B1ABFF', fontSize: '28px' }} />
                             <div className='listItem'>
-                                <span>Fiverr Enterprise</span>
+                                <span>GigHub Enterprise</span>
                                 <p>Manage your freelance workforce and onboard additional talent with an end-to-end SaaS solution</p>
                             </div>
                         </div>

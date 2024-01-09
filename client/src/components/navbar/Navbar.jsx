@@ -72,7 +72,7 @@ const Navbar = () => {
             <div className='container'>
                 <div className='logo'>
                     <Link to="/" className='link'>
-                        <span className='text'>fiverr</span>
+                        <span className='text'>GigHub</span>
                     </Link>
                     <FiberManualRecordIcon style={{ color: '#1dbf73', width: '12px', marginBottom: '-8px' }} />
                 </div>

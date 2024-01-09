@@ -10,7 +10,7 @@ import { FaRupeeSign } from "react-icons/fa";
 const GigCard = ({ item }) => {
 
     const { isLoading, error, data } = useQuery({
-        queryKey: ['userGig'],
+        queryKey: [`userGig-${item.userId}`],
         queryFn: () => newRequest.get(`/users/${item.userId}`).then((res) => {
             return res.data;
         }),
@@ -31,7 +31,7 @@ const GigCard = ({ item }) => {
                                 <img src={data.img || "/img/noavatar.png"} alt="" />
                                 <span>{data.username}</span>
                             </div>)}
-                    <p>{item.desc}</p>
+                    <p>{item.desc.substring(0, 35)}...</p>
                     <div className="star">
                         <img src="./img/star.png" alt="" />
                         <span>

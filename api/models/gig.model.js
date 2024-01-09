@@ -25,7 +25,7 @@ const GigSchema = new Schema(
     },
     cat: {
       type: String,
-      required: false,
+      required: true,
     },
     price: {
       type: Number,

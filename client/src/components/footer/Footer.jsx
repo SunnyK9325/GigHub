@@ -93,8 +93,8 @@ const Footer = () => {
 
                     <div className="bottom">
                         <div className="left">
-                            <span className='logo'>fiverr</span>
-                            <span>© Fiverr International Ltd. 2023</span>
+                            <span className='logo'>GigHub</span>
+                            <span>© GigHub International Ltd. 2023</span>
                         </div>
                         <div className="right">
                             <div className="social">

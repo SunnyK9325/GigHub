@@ -16,7 +16,7 @@ const Add = () => {
     const handleChange = (e) => {
         dispatch({
             type: "CHANGE_INPUT",
-            payload: { name: e.target.name, value: e.target.value, },
+            payload: { name: e.target.name, value: e.target.value },
         });
     }
 
@@ -66,6 +66,7 @@ const Add = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // console.log(state);
         mutation.mutate(state);
         navigate("/mygigs")
     };
@@ -84,8 +85,9 @@ const Add = () => {
                             placeholder="e.g. I will do something I'm really good at"
                             onChange={handleChange}
                         />
+                        {/* value={state.cat} ensures that the selected value is synchronized with the state. */}
                         <label htmlFor="">Category</label>
-                        <select name="cat" id="cat" onChange={handleChange}>
+                        <select name="cat" id="cat" onChange={handleChange} value={state.cat}>     
                             <option value="design">Design</option>
                             <option value="web">Web Development</option>
                             <option value="animation">Animation</option>

@@ -8,6 +8,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { HiOutlineHome } from "react-icons/hi2";
 import img from "/img/noavatar.png";
+import { FaRupeeSign } from "react-icons/fa";
 
 function Gig() {
     const { id } = useParams();
@@ -27,7 +28,7 @@ function Gig() {
         error: errorUser,
         data: dataUser,
     } = useQuery({
-        queryKey: ["user"],
+        queryKey: [`user-${userId}`],
         queryFn: () =>
             newRequest.get(`/users/${userId}`).then((res) => {
                 return res.data;
@@ -173,7 +174,9 @@ function Gig() {
                     <div className="right">
                         <div className="price">
                             <h3>{data.shortTitle}</h3>
-                            <h2>$ {data.price}</h2>
+                            <div style={{display:'flex', alignItems:'center'}}>
+                            <h2><FaRupeeSign style={{color:'grey', fontSize:'18px', marginRight:'-4px'}}/> {data.price}</h2>
+                            </div>
                         </div>
                         <p>{data.shortDesc}</p>
                         <div className="details">

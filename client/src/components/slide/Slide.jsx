@@ -26,7 +26,7 @@ const Slide = ({ children, flag, slidesToShow, slidesToSlide }) => {
     return (
         <div className='slide' style={{ marginBottom: flag === 2 ? '100px' : '0' }}>
             <div className='container'>
-                {flag == 1 ? <h1>Popular services</h1> : <h1>Inspiring work made on Fiverr</h1>}
+                {flag == 1 ? <h1>Popular services</h1> : <h1>Inspiring work made on GigHub</h1>}
 
                 <Carousel
                     swipeable={true} // Allow swipe gestures

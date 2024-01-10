@@ -92,7 +92,7 @@ const Navbar = () => {
 
                     <div className='item special'>
                         <VerifiedIcon style={{ width: '20px' }} className='symbol' />
-                        <span>Fiverr Pro</span>
+                        <span>GigHub Pro</span>
                     </div>
                     <div className='item'>
                         <span>Explore</span>

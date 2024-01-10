@@ -26,7 +26,7 @@ const Footer = () => {
                             <span>Writing & Translation</span>
                             <span>Video & Animation</span>
                             <span>Music & Audio</span>
-                            <span>Fiverr Logo Maker</span>
+                            <span>GigHub Logo Maker</span>
                             <span>Programming & Tech</span>
                             <span>Data</span>
                             <span>Business</span>
@@ -51,10 +51,10 @@ const Footer = () => {
                             <h2>Support and Education</h2>
                             <span>Help & Support</span>
                             <span>Trust & Safety</span>
-                            <span>Selling on Fiverr</span>
-                            <span>Buying on Fiverr</span>
-                            <span>Fiverr Guides</span>
-                            <span>Fiverr Workspace</span>
+                            <span>Selling on GigHub</span>
+                            <span>Buying on GigHub</span>
+                            <span>GigHub Guides</span>
+                            <span>GigHub Workspace</span>
                             <p>Invoice Software</p>
                             <span>Learn</span>
                             <span>Online Courses</span>
@@ -78,9 +78,9 @@ const Footer = () => {
                         <div className='item'>
                             <h2>Business Solutions</h2>
                             <span>About Business Solutions</span>
-                            <span>Fiverr Pro</span>
-                            <span>Fiverr Certified</span>
-                            <span>Fiverr Enterprise</span>
+                            <span>GigHub Pro</span>
+                            <span>GigHub Certified</span>
+                            <span>GigHub Enterprise</span>
                             <span>ClearVoice</span>
                             <p>Content Marketing</p>
                             <span>Working Not Working</span>

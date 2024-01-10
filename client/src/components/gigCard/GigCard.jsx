@@ -31,7 +31,7 @@ const GigCard = ({ item }) => {
                                 <img src={data.img || "/img/noavatar.png"} alt="" />
                                 <span>{data.username}</span>
                             </div>)}
-                    <p>{item.desc.substring(0, 35)}...</p>
+                    <p>{item.title.substring(0, 35)}...</p>
                     <div className="star">
                         <img src="./img/star.png" alt="" />
                         <span>

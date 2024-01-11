@@ -6,32 +6,47 @@ import Stripe from "stripe";
 export const intent = async (req, res, next) => {
     const stripe = new Stripe(process.env.STRIPE);
 
-    const gig = await Gig.findById(req.params.id);
+    try {
+        const gig = await Gig.findById(req.params.id);
 
-    // This function is going to create a payment intent on Stripe's end. It will return a client secret, which we will use to create a payment method on the client side. The payment method will be used to confirm the payment intent, which will then be used to create an order on our end.
-    const paymentIntent = await stripe.paymentIntents.create({
-        amount: gig.price * 100,
-        currency: "inr",
-        automatic_payment_methods: {
-            enabled: true,
-        },
-    });
+        // Increment the sales property
+        gig.sales += 1;
+        await gig.save();
 
-    const newOrder = new Order({
-        gigId: gig._id,
-        img: gig.cover,
-        title: gig.title,
-        buyerId: req.userId,
-        sellerId: gig.userId,
-        price: gig.price,
-        payment_intent: paymentIntent.id,
-    });
+        // Create a payment intent on Stripe's end
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount: gig.price * 100,
+            currency: "inr",
+            automatic_payment_methods: {
+                enabled: true,
+            },
+        });
 
-    await newOrder.save();
-    res.status(200).send({
-        client_secret: paymentIntent.client_secret
-    });
-}
+        // Create a new order
+        const newOrder = new Order({
+            gigId: gig._id,
+            img: gig.cover,
+            title: gig.title,
+            buyerId: req.userId,
+            sellerId: gig.userId,
+            price: gig.price,
+            payment_intent: paymentIntent.id,
+        });
+
+        // Save the new order
+        await newOrder.save();
+
+        // Send the client_secret to the client
+        res.status(200).send({
+            client_secret: paymentIntent.client_secret,
+        });
+    } catch (error) {
+        // Handle errors
+        console.error(error);
+        res.status(500).send({ error: 'Internal Server Error' });
+    }
+};
+
 
 export const getOrders = async (req, res, next) => {
     try {

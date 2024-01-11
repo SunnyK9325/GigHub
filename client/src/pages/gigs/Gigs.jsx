@@ -6,7 +6,7 @@ import GigCard from '../../components/gigCard/GigCard';
 import { Link, useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import newRequest from '../../utils/newRequest.js';
-
+import queryString from 'query-string';
 
 const Gigs = () => {
     const [open, setOpen] = useState(false);
@@ -15,8 +15,41 @@ const Gigs = () => {
     const maxRef = useRef();
 
     const { search } = useLocation();
+    const { cat } = queryString.parse(location.search);
+    // console.log(cat);
 
-    // console.log(location);
+    const category = {
+        'ai' : 'AI Artists',
+        'design' : 'Design',
+        'wordpress' : 'WordPress',
+        'voiceover' : 'Voice Over',
+        'video' : 'Video Explainer',
+        'social' : 'Social Media',
+        'seo' : 'SEO',
+        'illustration' : 'Illustration',
+    };
+
+    const title = {
+        'ai': 'Explore the boundaries of art and technology with GitHub AI artists',
+        'design': 'Transforming visions into stunning designs with a touch of creativity',
+        'wordpress': 'Crafting powerful websites with WordPress magic',
+        'voiceover': 'Give life to your words with captivating voiceovers',
+        'video': 'Bring stories to life through compelling and engaging videos',
+        'social': 'Boost your online presence with strategic social media solutions',
+        'seo': 'Optimize your digital presence and climb the ranks with SEO mastery',
+        'illustration': 'Illustrate your ideas with captivating and meaningful visuals',
+    };
+
+    const path = {
+        'ai' : 'Graphics & Design',
+        'design' : 'Graphics & Design',
+        'wordpress' : 'Programming & Tech',
+        'voiceover' : 'Music & Audio',
+        'video' : 'Video & Animation',
+        'social' : 'Digital Marketing',
+        'seo' : 'Digital Marketing',
+        'illustration' : 'Graphics & Design',
+    };
 
     const { isPending, error, data, refetch } = useQuery({
         queryKey: ['gigs'],
@@ -46,12 +79,12 @@ const Gigs = () => {
                 <div className='path'>
                     <Link to='/' className='link'><HiOutlineHome style={{ marginRight: '5px', width: '14px' }} /></Link>
                     <span style={{ color: '#c5c6c9' }}>/</span>
-                    <span className='breadcrumbs'> Graphics & Design </span>
+                    <span className='breadcrumbs'> {path[cat]} </span>
                 </div>
 
-                <h1>AI Artists</h1>
+                <h1>{category[cat]}</h1>
                 <p>
-                    Explore the boundaries of art and technology with Fiverr's AI artists
+                    {title[cat]}
                 </p>
 
                 <div className='menu'>

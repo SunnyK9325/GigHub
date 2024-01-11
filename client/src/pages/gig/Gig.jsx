@@ -56,6 +56,8 @@ function Gig() {
         // }
     };
 
+    console.log(data);
+
     return (
         <div className="gig">
             {isLoading ? (
@@ -82,17 +84,19 @@ function Gig() {
                                     src={dataUser.img || img}
                                     alt=""
                                 />
-                                <span>{dataUser.username}</span>
-                                {!isNaN(data.totalStars / data.starNumber) && (
-                                    <div className="stars">
-                                        {Array(Math.round(data.totalStars / data.starNumber))
-                                            .fill()
-                                            .map((item, i) => (
-                                                <img src="/img/star.png" alt="" key={i} />
-                                            ))}
-                                        <span>{Math.round(data.totalStars / data.starNumber)}</span>
-                                    </div>
-                                )}
+                                <div className="detail">
+                                    <span>{dataUser.username}</span>
+                                    {!isNaN(data.totalStars / data.starNumber) && (
+                                        <div className="stars">
+                                            {Array(Math.round(data.totalStars / data.starNumber))
+                                                .fill()
+                                                .map((item, i) => (
+                                                    <img src="/img/star.png" alt="" key={i} />
+                                                ))}
+                                            <span>{Math.round(data.totalStars / data.starNumber)}</span>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         )}
                         <Carousel
@@ -174,15 +178,15 @@ function Gig() {
                     <div className="right">
                         <div className="price">
                             <h3>{data.shortTitle}</h3>
-                            <div style={{display:'flex', alignItems:'center'}}>
-                            <h2><FaRupeeSign style={{color:'grey', fontSize:'18px', marginRight:'-4px'}}/> {data.price}</h2>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <h2><FaRupeeSign style={{ color: 'grey', fontSize: '18px', marginRight: '-4px' }} /> {data.price}</h2>
                             </div>
                         </div>
                         <p>{data.shortDesc}</p>
                         <div className="details">
                             <div className="item">
                                 <img src="/img/clock.png" alt="" />
-                                <span>{data.deliveryDate} Days Delivery</span>
+                                <span>{data.deliveryTime} Days Delivery</span>
                             </div>
                             <div className="item">
                                 <img src="/img/recycle.png" alt="" />

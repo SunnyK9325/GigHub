@@ -35,8 +35,8 @@
                 gap: 10px;
 
                 .pp {
-                    width: 32px;
-                    height: 32px;
+                    width: 35px;
+                    height: 35px;
                     border-radius: 50%;
                 }
 
@@ -243,7 +243,6 @@
 
             p {
                 color: rgb(103, 99, 99);
-                margin: 10px 0px;
             }
 
             .details {
@@ -292,7 +291,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    background-color: #158e5e;
+                    background-color: #cf7c3c;
                 }
             }
         }

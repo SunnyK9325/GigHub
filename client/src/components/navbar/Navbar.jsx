@@ -9,6 +9,12 @@ import { FaChevronDown } from "react-icons/fa";
 import LanguageIcon from '@mui/icons-material/Language';
 import { IoSearch } from "react-icons/io5";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import MessageIcon from '@mui/icons-material/Message';
+import LogoutIcon from '@mui/icons-material/Logout';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import LoginIcon from '@mui/icons-material/Login';
 
 const Navbar = () => {
 
@@ -103,7 +109,12 @@ const Navbar = () => {
                         <span>English</span>
                     </div>
 
-                    {!currentUser && <Link to="/login" className='link'><span>Sign in</span></Link>}
+                    {!currentUser && <Link to="/login" className='link'>
+                        <div className='item'>
+                            <LoginIcon style={{ width: '20px' }} />
+                            <span>Sign in</span>
+                        </div>
+                    </Link>}
                     {!currentUser?.isSeller && <span>Become a seller</span>}
                     {/* {!currentUser && <span>Join</span>} */}
                     {currentUser && (
@@ -114,18 +125,34 @@ const Navbar = () => {
                             {open && <div className='options'>
                                 {currentUser?.isSeller && (
                                     <>
-                                        <Link to='/myGigs' className='link'>Gigs</Link>
-                                        <Link to='/add' className='link'>Add New Gig</Link>
+                                        <Link to='/myGigs' className='link'>
+                                            <div className='menuItem'>
+                                                <HomeRepairServiceIcon style={{ fontSize: '18px' }} />
+                                                <span>Gigs</span>
+                                            </div>
+                                        </Link>
+                                        <Link to='/add' className='link'>
+                                            <div className='menuItem'>
+                                                <AddBoxIcon style={{ fontSize: '18px' }} />
+                                                <span>Add New Gig</span>
+                                            </div>
+                                        </Link>
                                     </>
                                 )}
                                 <Link to='/orders' className='link'>
-                                    Orders
+                                    <div className='menuItem'>
+                                        <ShoppingBasketIcon style={{ fontSize: '18px' }} /><span>Orders</span>
+                                    </div>
                                 </Link>
                                 <Link to='/messages' className='link'>
-                                    Messages
+                                    <div className='menuItem'>
+                                        <MessageIcon style={{ fontSize: '18px' }} /><span>Messages</span>
+                                    </div>
                                 </Link>
                                 <Link className='link' onClick={handleLogout}>
-                                    Logout
+                                    <div className='menuItem'>
+                                        <LogoutIcon style={{ fontSize: '18px' }} /><span>Logout</span>
+                                    </div>
                                 </Link>
                             </div>}
                         </div>

@@ -27,7 +27,9 @@ const Login = () => {
     return (
         <div className='login'>
             <form onSubmit={handleSubmit}>
-                <h1>Sign in</h1>
+                <div style={{display:'flex', justifyContent:'center'}}>
+                    <h1>Sign in</h1>
+                </div>
                 <label htmlFor=''>Username</label>
                 <input name='username' type='text' placeholder='john doe' onChange={e => setUsername(e.target.value)} />
 
@@ -35,7 +37,7 @@ const Login = () => {
                 <input name='password' type='password' onChange={e => setPassword(e.target.value)} />
                 <button className='loginButton'>Login</button>
                 <div className='register'>
-                    <span style={{color: 'grey'}}>Don't have an account?</span>
+                    <span style={{ color: 'grey' }}>Don't have an account?</span>
                     <Link to="/register" className='link'><button>Sign Up</button></Link>
                 </div>
                 {error && error}

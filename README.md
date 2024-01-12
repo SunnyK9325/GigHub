@@ -10,7 +10,7 @@
 – Employed technologies such as React Axios for seamless data fetching and requests, React Router for navigation, and React Query for efficient search queries. Integrated Stripe for secure gig order processing.  
   
   
-![image](https://github.com/SunnyK9325/GigHub/assets/95949944/80bdbd3a-3913-4871-a3dc-b9cd1af87c70) 
+![image](https://github.com/SunnyK9325/GigHub/assets/95949944/982e2cd9-de5a-41c6-b2fc-530f5184e378)  
   
 ![image](https://github.com/SunnyK9325/GigHub/assets/95949944/3d516376-faeb-4473-9849-891e1f4bdac1) 
   

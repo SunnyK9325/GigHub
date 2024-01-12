@@ -1,4 +1,4 @@
-## GigHub  
+# GigHub  
 – Developed a freelancing web application using the MERN stack, enabling user registration as sellers or regular users. Sellers can create and delete gigs, while users can explore, purchase, and review gigs they have purchased. Order tracking is available on the orders page.  
   
 – The front end is built using React.js, styled with Sassy CSS (SASS) for a clean and efficient design.

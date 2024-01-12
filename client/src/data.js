@@ -8,7 +8,7 @@ export const cards = [
     },
     {
       id: 2,
-      title: "Logo Design",
+      title: "Design",
       desc: "Build yor brand",
       img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161257/logo-design-2x.png",
       cat: "design",

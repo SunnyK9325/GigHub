@@ -23,7 +23,8 @@ const Pay = () => {
                 );
                 setClientSecret(res.data.client_secret);
             } catch (err) {
-                console.log(err);
+                // console.log(err.response.data.error);
+                alert(err.response.data.error);
             }
         };
         makeRequest();

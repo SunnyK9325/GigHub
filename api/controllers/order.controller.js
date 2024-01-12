@@ -7,6 +7,18 @@ export const intent = async (req, res, next) => {
     const stripe = new Stripe(process.env.STRIPE);
 
     try {
+
+        // Check if the user has already purchased the gig
+        const existingOrder = await Order.findOne({
+            gigId: req.params.id,
+            buyerId: req.userId,
+            status: 'success', // Assuming you have a status field in your Order model
+        });
+
+        if (existingOrder) {
+            return res.status(400).send({ error: 'Gig already purchased by the user' });
+        }
+
         const gig = await Gig.findById(req.params.id);
 
         // Increment the sales property

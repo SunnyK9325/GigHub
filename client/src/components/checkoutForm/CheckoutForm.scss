@@ -1,0 +1,31 @@
+.pay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        width: 400px;
+        margin: 50px 0;
+
+        form {
+            background-color: rgb(208, 242, 245);
+            padding: 20px;
+            border-radius: 10px;
+
+            button {
+                margin-top: 20px;
+                padding: 10px 15px;
+                background-color: #007bff; // Change the background color to your preference
+                color: #fff; // Change the text color to your preference
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #0056b3; // Change the hover background color to your preference
+                }
+            }
+        }
+    }
+}

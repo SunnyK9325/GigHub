@@ -15,7 +15,11 @@ export const intent = async (req, res, next) => {
             status: 'success', // Assuming you have a status field in your Order model
         });
 
-        if (existingOrder) {
+        if(existingOrder && existingOrder.sellerId === req.userId && existingOrder.status === 'success') {
+            return res.status(400).send({ error: 'You cannot purchase your own gig' });
+        }
+        else 
+        if (existingOrder && existingOrder.status === 'success') {
             return res.status(400).send({ error: 'Gig already purchased by the user' });
         }
 
@@ -63,9 +67,10 @@ export const intent = async (req, res, next) => {
 export const getOrders = async (req, res, next) => {
     try {
         const orders = await Order.find({
-            ...(req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId }),     // The reason for assigning req.userId to either sellerId or buyerId is to filter the orders based on the user's role. Sellers have orders where they are the sellers, and buyers have orders where they are the buyers. This helps in displaying the relevant orders to the user based on their role in the transaction.
+            buyerId: req.userId,
             isCompleted: true,
         });
+        
         res.status(200).send(orders);
     } catch (err) {
         next(err);

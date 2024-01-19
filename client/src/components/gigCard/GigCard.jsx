@@ -5,6 +5,9 @@ import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest.js";
 
 import { FaRupeeSign } from "react-icons/fa";
+import noavatar from "/img/noavatar.png";
+import star from "/img/star.png";
+import heart from "/img/heart.png";
 
 
 const GigCard = ({ item }) => {
@@ -28,12 +31,12 @@ const GigCard = ({ item }) => {
                     {isLoading ? ("Loading")
                         : error ? ("something went wrong!")
                             : (<div className="user">
-                                <img src={data.img || "/img/noavatar.png"} alt="" />
+                                <img src={data.img || { noavatar }} alt="" />
                                 <span>{data.username}</span>
                             </div>)}
                     <p>{item.title.substring(0, 35)}...</p>
                     <div className="star">
-                        <img src="./img/star.png" alt="" />
+                        <img src={star} alt="" />
                         <span>
                             {(!isNaN(item.totalStars / item.starNumber) &&
                                 Math.round((item.totalStars / item.starNumber) * 10) / 10)}
@@ -44,7 +47,7 @@ const GigCard = ({ item }) => {
                 <hr />
 
                 <div className="detail">
-                    <img src="/img/heart.png" alt="" />
+                    <img src={heart} alt="" />
 
                     <div className="price">
                         <span>STARTING AT</span>

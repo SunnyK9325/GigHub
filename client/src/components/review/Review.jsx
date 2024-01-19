@@ -2,6 +2,10 @@ import React from 'react';
 import './Review.scss';
 import newRequest from '../../utils/newRequest';
 import { useQuery } from '@tanstack/react-query';
+import noavatar from "/img/noavatar.png";
+import like from "/img/like.png";
+import star from "/img/star.png";
+import dislike from "/img/dislike.png";
 
 const Review = ({ review }) => {
     const { isLoading, error, data } = useQuery(
@@ -23,7 +27,7 @@ const Review = ({ review }) => {
                 "error"
             ) : (
                 <div className="user">
-                    <img className="pp" src={data.img || "/img/noavatar.png"} alt="" />
+                    <img className="pp" src={data.img || noavatar} alt="" />
                     <div className="info">
                         <span>{data.username}</span>
                         <div className="country">
@@ -34,7 +38,7 @@ const Review = ({ review }) => {
             )}
             <div className="stars">
                 {Array(review.star).fill().map((item, i) =>
-                    <img src="/img/star.png" alt="" key={i} />
+                    <img src={star} alt="" key={i} />
                 )}
                 <span>{review.star}</span>
             </div>
@@ -43,9 +47,9 @@ const Review = ({ review }) => {
             </p>
             <div className="helpful">
                 <span>Helpful?</span>
-                <img src="/img/like.png" alt="" />
+                <img src={like} alt="" />
                 <span>Yes</span>
-                <img src="/img/dislike.png" alt="" />
+                <img src={dislike} alt="" />
                 <span>No</span>
             </div>
             <hr />

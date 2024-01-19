@@ -11,6 +11,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GrLanguage } from "react-icons/gr";
+import accessibility from "/img/accessibility.png";
 
 const Footer = () => {
     return (
@@ -113,7 +114,7 @@ const Footer = () => {
                                 <FaRupeeSign style={{ fontSize: '12px' }} />
                                 <span style={{ fontSize: '14px', fontWeight: 'bold' }}>INR</span>
                             </div>
-                            <img src="/img/accessibility.png" alt="" />
+                            <img src={accessibility} />
                         </div>
                     </div>
                 </div>

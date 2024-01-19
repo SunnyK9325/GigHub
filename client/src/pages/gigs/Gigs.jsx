@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import newRequest from '../../utils/newRequest.js';
 import queryString from 'query-string';
+import down from '/img/down.png';
 
 const Gigs = () => {
     const [open, setOpen] = useState(false);
@@ -97,7 +98,7 @@ const Gigs = () => {
                     <div className='right'>
                         <span className='sortBy'>Sort By</span>
                         <span className='sortType'>{sort === "sales" ? "Best Selling" : "Newest"}</span>
-                        <img src='./img/down.png' alt='' onClick={() => setOpen(!open)} />
+                        <img src={down} alt='' onClick={() => setOpen(!open)} />
                         {open && <div className='rightMenu'>
                             {sort === "sales" ?
                                 <span onClick={() => reSort("CreatedAt")}>Newest</span>

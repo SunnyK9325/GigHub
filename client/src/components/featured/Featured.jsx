@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Featured.scss';
 import { IoSearch } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
+import man from "/img/man.png";
 
 const Featured = () => {
     const [input, setInput] = useState('');
@@ -53,7 +54,7 @@ const Featured = () => {
                 </div>
 
                 <div className="right">
-                    <img src="../../public/img/man.png" alt="" />
+                    <img src={man} alt="" />
                 </div>
             </div>
         </div>

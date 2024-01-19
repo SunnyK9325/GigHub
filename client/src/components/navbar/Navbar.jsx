@@ -15,6 +15,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import LoginIcon from '@mui/icons-material/Login';
+import noavatar from "/img/noavatar.png";
 
 const Navbar = () => {
 
@@ -119,7 +120,7 @@ const Navbar = () => {
                     {/* {!currentUser && <span>Join</span>} */}
                     {currentUser && (
                         <div ref={dropdownRef} className='user' onClick={() => setOpen(!open)}>
-                            <img src={currentUser.img || "/img/noavatar.png"}
+                            <img src={currentUser.img || { noavatar }}
                                 alt='' />
                             <span>{currentUser.username}</span>
                             {open && <div className='options'>

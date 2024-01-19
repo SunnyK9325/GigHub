@@ -3,6 +3,7 @@ import './Orders.scss';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import newRequest from '../../utils/newRequest.js';
+import message from "/img/message.png";
 
 const Orders = () => {
 
@@ -46,7 +47,7 @@ const Orders = () => {
                                 <td>
                                     <img
                                         className="message"
-                                        src="./img/message.png"
+                                        src={message}
                                         alt=""
                                     // onClick={() => handleContact(order)}
                                     />

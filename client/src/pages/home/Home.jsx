@@ -11,13 +11,14 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import ProjectCard from '../../components/projectCard/ProjectCard';
+import video from "/img/video.mp4";
 
 const Home = () => {
     return (
         <div className='home'>
             <Featured />
             <TrustedBy />
-            <Slide flag={1} slidesToShow = {5} slidesToSlide={5}>
+            <Slide flag={1} slidesToShow={5} slidesToSlide={5}>
                 {cards.map((card) => (
                     <CatCard key={card.id} item={card} />
                 ))}
@@ -63,7 +64,7 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="item">
-                        <video src="../../public/img/video.mp4" controls > </video>
+                        <video src={video} controls > </video>
                     </div>
                 </div>
             </div>
@@ -118,14 +119,14 @@ const Home = () => {
             </div>
 
             <div className='projects'>
-                <Slide flag={2} slidesToShow = {4} slidesToSlide={1}>
+                <Slide flag={2} slidesToShow={4} slidesToSlide={1}>
                     {projects.map((card) => (
                         <ProjectCard key={card.id} card={card} />
                     ))}
                 </Slide>
             </div>
 
-            
+
 
         </div>
     );

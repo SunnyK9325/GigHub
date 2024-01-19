@@ -4,6 +4,7 @@ import "./MyGigs.scss";
 import getCurrentUser from "../../utils/getCurrentUser";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
+import deleteImg from "/img/delete.png";
 
 function MyGigs() {
     const currentUser = getCurrentUser();
@@ -68,7 +69,7 @@ function MyGigs() {
                                 <td>
                                     <img
                                         className="delete"
-                                        src="./img/delete.png"
+                                        src={deleteImg}
                                         alt=""
                                         onClick={() => handleDelete(gig._id)}
                                     />

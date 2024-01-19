@@ -7,7 +7,11 @@ import Reviews from "../../components/reviews/Reviews";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { HiOutlineHome } from "react-icons/hi2";
-import img from "/img/noavatar.png";
+import noavatar from "/img/noavatar.png";
+import greencheck from "/img/greencheck.png";
+import clock from "/img/clock.png";
+import recycle from "/img/recycle.png";
+import starImg from "/img/star.png";
 import { FaRupeeSign } from "react-icons/fa";
 
 function Gig() {
@@ -81,7 +85,7 @@ function Gig() {
                             <div className="user">
                                 <img
                                     className="pp"
-                                    src={dataUser.img || img}
+                                    src={dataUser.img || noavatar}
                                     alt=""
                                 />
                                 <div className="detail">
@@ -91,7 +95,7 @@ function Gig() {
                                             {Array(Math.round(data.totalStars / data.starNumber))
                                                 .fill()
                                                 .map((item, i) => (
-                                                    <img src="/img/star.png" alt="" key={i} />
+                                                    <img src={starImg} alt="" key={i} />
                                                 ))}
                                             <span>{Math.round(data.totalStars / data.starNumber)}</span>
                                         </div>
@@ -127,7 +131,7 @@ function Gig() {
                             <div className="seller">
                                 <h2>About The Seller</h2>
                                 <div className="user">
-                                    <img src={dataUser.img || img} alt="" />
+                                    <img src={dataUser.img || noavatar} alt="" />
                                     <div className="info">
                                         <span>{dataUser.username}</span>
                                         {!isNaN(data.totalStars / data.starNumber) && (
@@ -135,7 +139,7 @@ function Gig() {
                                                 {Array(Math.round(data.totalStars / data.starNumber))
                                                     .fill()
                                                     .map((item, i) => (
-                                                        <img src="/img/star.png" alt="" key={i} />
+                                                        <img src={starImg} alt="" key={i} />
                                                     ))}
                                                 <span>
                                                     {Math.round(data.totalStars / data.starNumber)}
@@ -185,18 +189,18 @@ function Gig() {
                         <p>{data.shortDesc}</p>
                         <div className="details">
                             <div className="item">
-                                <img src="/img/clock.png" alt="" />
+                                <img src={clock} alt="" />
                                 <span>{data.deliveryTime} Days Delivery</span>
                             </div>
                             <div className="item">
-                                <img src="/img/recycle.png" alt="" />
+                                <img src={recycle} alt="" />
                                 <span>{data.revisionNumber} Revisions</span>
                             </div>
                         </div>
                         <div className="features">
                             {data.features.map((feature) => (
                                 <div className="item" key={feature}>
-                                    <img src="/img/greencheck.png" alt="" />
+                                    <img src={greencheck} alt="" />
                                     <span>{feature}</span>
                                 </div>
                             ))}
